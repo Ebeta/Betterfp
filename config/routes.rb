@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :patients
   get '/patients' => 'patients#index'
 
+  resources :medications
+  get '/medications' => 'medications#index'
+  get '/medications/new' => 'medications#'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
