@@ -1,4 +1,4 @@
-class EntitiesController < ActionController::Base
+class EntitiesController < ActionController
 	def display
 		@entity = Entity.new
 	end
@@ -6,6 +6,7 @@ class EntitiesController < ActionController::Base
 		@entity = Entity.create(entities_params)
 		redirect_to entities_path
 	end
+
 private
 
 	def entities_params

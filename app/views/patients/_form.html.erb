@@ -1,0 +1,7 @@
+<!-- This is a Patient Form Partial-->
+
+<%= form_for @patient do |f| %>
+    <%= f.text_field :name, value: @patient.name %>
+    <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,7 @@
+
+Lists all medications. Can click on each to lead to show.
+ Can create new.
+
+ <% if medications.size == 0 %>
+<em> No medications found. <%= link_to "Add a new medication for a patient here.", new_medications_path %>. </em>
+<% end %>
