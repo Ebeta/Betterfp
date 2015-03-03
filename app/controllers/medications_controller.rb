@@ -1,6 +1,7 @@
 class MedicationsController < InheritedResources::Base
 
     def index
+    @medications = Medications.all
     end
 
     def new
