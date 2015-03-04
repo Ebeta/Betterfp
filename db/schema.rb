@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20150301192922) do
   create_table "entities", force: :cascade do |t|
     t.string   "location"
     t.string   "name"
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "title"
   end
 
   create_table "medications", force: :cascade do |t|

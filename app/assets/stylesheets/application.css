@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+.sidebar {
+    font-family: Futura, Helvetica, sans-serif;
+    float: left;
+
+}
