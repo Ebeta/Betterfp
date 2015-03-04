@@ -15,4 +15,35 @@ class ApplicationController < ActionController::Base
       ## render :file => File.join(Rails.root, 'public/404'), :formats => [:html], :status => 404, :layout => false
     end
   end
+
+	rescue_from CanCan::AccessDenied do |exception|
+	  flash[:error] = "Access denied."
+	  redirect_to root_url
+	end
+	
+  def access_lvl1?
+  	unless current_user.access >= 1
+  		redirect_to root_path
+  	end
+  end
+
+  def access_lvl2?
+  	unless current_user.access >= 2
+  		redirect_to root_path
+  	end
+  end
+
+  def access_lvl3?
+  	unless current_user.access >= 3
+  		redirect_to root_path
+  	end
+  end
+
+  def is_admin?
+  	unless current_user.admin
+  		redirect_to root_path
+  	end
+  end
+
+
 end

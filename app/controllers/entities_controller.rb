@@ -1,4 +1,6 @@
 class EntitiesController < ActionController
+	before_action :is_admin?, only: :create
+	
 	def display
 		@entity = Entity.new
 	end

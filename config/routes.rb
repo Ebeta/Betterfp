@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :medications
   get '/medications' => 'medications#index'
-  get '/medications/new' => 'medications#'
+  get '/medications/new' => 'medications#new'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
