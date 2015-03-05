@@ -1,4 +1,4 @@
-class CreatePatientMedications < ActiveRecord::Migration
+ class CreatePatientMedications < ActiveRecord::Migration
   def change
     create_table :patient_medications do |t|
       t.references :patient, index: true

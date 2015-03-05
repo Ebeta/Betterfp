@@ -32,7 +32,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.string :eamil
       t.string :name
-      t.boolean :admin
+      t.boolean :admin, default: false
       t.integer :access
       t.references :entity
 

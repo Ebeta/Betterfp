@@ -1,17 +1,18 @@
 class PatientsController < ApplicationController
+    before_action :access_lvl2?, only: [:create, :edit, :destroy]
 
     def index
         @patients = current_user.entity.patients
     end
 
     def new
-    @patient = current_user.entity.patients.new
-    pm = @patient.patient_medications.build
-    pm.build_medication
+        @patient = current_user.entity.patients.new
+        pm = @patient.patient_medications.build
+        pm.build_medication
     end
 
     def show
-    @patient = current_user.entity.patients.find(params[:id])
+        @patient = current_user.entity.patients.find(params[:id])
     end
 
     def edit

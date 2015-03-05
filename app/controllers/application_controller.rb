@@ -16,17 +16,6 @@ protected
     end
   end
 
-  def set_language
-    session[:lang] = params[:lang] || session[:lang]
-    I18n.locale = session[:lang] || :en
-  end
-end
-
-rescue_from CanCan::AccessDenied do |exception|
-  flash[:error] = "Access denied."
-  redirect_to root_url
-end
-
 def access_lvl1?
   unless current_user.access >= 1
     redirect_to root_path
@@ -48,6 +37,13 @@ end
 def is_admin?
   unless current_user.admin
     redirect_to root_path
+  end
+end
+
+  def has_entity?
+  	if current_user.entity
+  		redirect_to root_path
+  	end
   end
 end
 

@@ -6,10 +6,16 @@ class User < ActiveRecord::Base
 
   belongs_to :entity
 
-  has_many :patients, through: :entity
+	def add_entity(current_user)
+		if current_user
+			# for establishments / teams
+			self.entity = current_user.entity
+			self.save
+		end
+	end
 
-  def patients
-    entity.patients
-  end
+	def patients
+		entity.patients
+	end
 
 end

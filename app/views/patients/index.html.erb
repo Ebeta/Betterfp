@@ -2,9 +2,9 @@
 
 <div class = "patient_list">
 
-    <% if @patients.size == 0 %>
-        <em> No patients found. <%= link_to "Add a new patient here", new_patient_path %>. </em>
-    <% end %>
+<% if @patients.size == 0 %>
+<em> No patients found. <%= link_to "Add a new patient here", patients_path %>. </em>
+<% end %>
 
     <% @patients.each do |patient| %>
         <div class = "patient-list-name"> <h4><%= patient.name %></h4> </div>

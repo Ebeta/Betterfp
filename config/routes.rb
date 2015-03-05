@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { registrations: "users/registrations" }
 
   get '/entities' => 'entities#display'
 
@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/' => 'pages#dashboard'
   get '/dashboard' => 'pages#dashboard'
 
+  get '/entity/new' => 'entities#new', as: :new_entity
 
   resources :patients
   get '/patients' => 'patients#index'
