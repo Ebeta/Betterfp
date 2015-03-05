@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'best-in-place'
+# gem 'best-in-place'
 gem 'ffaker', '~> 1.24.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'

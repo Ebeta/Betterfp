@@ -45,6 +45,11 @@ end
   		redirect_to root_path
   	end
   end
+
+  def set_language
+    puts "Language is being set to Spanish! YAYAY!"
+    I18n.locale = params[:lang] || :en
+  end
 end
 
 

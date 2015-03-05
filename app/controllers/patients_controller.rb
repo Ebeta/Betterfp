@@ -25,7 +25,17 @@ class PatientsController < ApplicationController
         else
             render :action => 'new'
         # PatientMedication.create(patient: patient, medication: med)
-    end
+
+            respond_to do |format|
+             if @patient.save
+                 format.html { redirect_to @patient, notice: 'Patient was successfully created.' }
+                 format.json { render :show, status: :created, location: @patient }
+                 else
+                    format.html { render :new }
+                    format.json { render json: @patient.errors, status: :unprocessable_entity }
+                end
+            end
+        end
     end
 
     def delete
@@ -34,9 +44,9 @@ class PatientsController < ApplicationController
 
     def update
         @patient = Patient.find(params[:id])
-        @patient.update(patient_params)
-        @patient.save
-        redirect_to :back
+        # @patient.update(patient_params)
+        # @patient.save
+        # redirect_to :back
     end
 
     private
