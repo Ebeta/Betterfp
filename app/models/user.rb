@@ -4,7 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :entity_id, presence: true
   belongs_to :entity
 
   has_many :patients, through: :entity
@@ -12,4 +11,5 @@ class User < ActiveRecord::Base
   def patients
     entity.patients
   end
+
 end
