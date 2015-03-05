@@ -1,1 +1,21 @@
-THIS IS A PARTIAL FORM FOR PATIENT MEDICATIONS
+<!-- THIS IS A PARTIAL FORM FOR PATIENT MEDICATIONS -->
+
+<%= form_for @patient_medication do |f| %>
+    <div class = "patient_medication_fields">
+        <%= f.label "Medication Count:" %>
+        <%= f.text_field :count, value: @patient_medication.count %>
+
+        <%= f.label "Dose (include units):" %>
+        <%= f.text_field :dose, value: @patient_medication.dose %>
+
+        <%= f.label "Frequency:" %>
+        <%= f.text_field :frequency, value: @patient_medication.frequency %>
+
+        <%= f.label "Start Date:" %>
+        <%= f.text_field :start_date, value: @patient_medication.start_date %>
+
+        <%= f.label "End Date:" %>
+        <%= f.text_field :end_date, value: @patient_medication.end_date %>
+    </div>
+
+<% end %>

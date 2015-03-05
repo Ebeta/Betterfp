@@ -1,1 +1,10 @@
-TO create new medication. Goes back to profile page.
+Add A New Medication For A Patient.
+
+<!-- Choose from a list of patients to associate a patient with a new medication -->
+<%= collection_select @patients %>
+
+<%= render 'form' %>
+
+<%= link_to "Back", patients_path %>
+
+

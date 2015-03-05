@@ -15,8 +15,22 @@
 </div>
 
 
-</div class = "main_calendar">
+<div class = "main_calendar">
 
-Schedule of Medications
+Schedule of Medications For Each Patient
 
-<div>
+ <% @patients.each do |patient| %>
+   <li> <%= patient.id %> <%= patient.name %>
+    <% patient.medications.each do |med| %>
+      <%= med.name %>
+      <% end %>
+
+
+
+
+
+    <%#= patient.medications.map{|m| m.name }.join(", ") %> </li>
+    <% end %>
+
+
+</div>
