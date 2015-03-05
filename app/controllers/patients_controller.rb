@@ -1,6 +1,10 @@
 class PatientsController < ApplicationController
+        before_action :access_lvl2?, only: [:create, :edit, :destroy]
+    
     def index
-    @patient = current_user.entity.patients.all
+        
+
+    @patients = current_user.entity.patients.all
 
     end
 

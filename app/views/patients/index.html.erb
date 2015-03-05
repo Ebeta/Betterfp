@@ -1,7 +1,7 @@
 MANAGE PATIENTS. LISTS OUT ALL PATIENTS.
 
 
-<% if patients.size == 0 %>
+<% if @patients.size == 0 %>
 <em> No patients found. <%= link_to "Add a new patient here", patients_path %>. </em>
 <% end %>
 

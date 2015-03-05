@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
 	  flash[:error] = "Access denied."
 	  redirect_to root_url
 	end
-	
+
   def access_lvl1?
   	unless current_user.access >= 1
   		redirect_to root_path
@@ -41,6 +41,12 @@ class ApplicationController < ActionController::Base
 
   def is_admin?
   	unless current_user.admin
+  		redirect_to root_path
+  	end
+  end
+
+  def has_entity?
+  	if current_user.entity
   		redirect_to root_path
   	end
   end

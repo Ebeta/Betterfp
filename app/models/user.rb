@@ -5,5 +5,13 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :entity
-  
+
+  def add_entity(current_user)
+  	if current_user
+  		# for establishments / teams
+  		self.entity = current_user.entity
+  		self.save
+  	end
+  end
+
 end
