@@ -1,0 +1,12 @@
+<!-- This is a Medications Form Partial-->
+
+
+<%= form_for @medication do |f| %>
+    <div class = "medication_fields">
+        <%= f.label :name, "Medication Name" %>
+        <%= f.text_field :name, value: @medication.name %>
+
+        <%= f.label :description, "Description:" %>
+        <%= f.text_field :description, value: @medication.description %>
+    </div>
+<% end %>

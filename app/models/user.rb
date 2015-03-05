@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   validates :entity_id, presence: true
   belongs_to :entity
 
+  has_many :patients, through: :entity
+
   def patients
     entity.patients
   end

@@ -1,7 +1,15 @@
 
-Lists all medications. Can click on each to lead to show.
- Can create new.
+<!-- Lists all medications. Can create new. -->
 
- <% if medications.size == 0 %>
-<em> No medications found. <%= link_to "Add a new medication for a patient here.", new_medications_path %>. </em>
-<% end %>
+<div class = "medication_list">
+
+    <% @medication.each do |medication| %>
+
+    <%= @medications.all %>
+
+        <% if medications.size == 0 %>
+            <em> No medications found. <%= link_to "Add a new medication for a patient here.", new_medication_path %>. </em>
+        <% end %>
+    <% end %>
+
+</div>

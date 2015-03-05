@@ -1,7 +1,67 @@
-<!-- This is a Patient Form Partial-->
+<!-- This is a Patient Form Partial With Nested Medications Form and Patient_Medication-->
 
 <%= form_for @patient do |f| %>
-    <%= f.text_field :name, value: @patient.name %>
-    <%= f.submit %>
 
+<% if @patient.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+      <ul>
+      <% @patient.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class = "patient_fields">
+
+        <%= f.label :name, "Full Name" %>
+        <%= f.text_field :name, value: @patient.name, id: "field" %><br>
+
+        <%= f.label :age, "Age" %>
+        <%= f.text_field :age, value: @patient.age %><br>
+
+        <%= f.label :gender, "Gender" %>
+        <%= f.text_field :gender, value: @patient.gender %><br>
+
+        <%= f.label :email, "Email" %>
+        <%= f.text_field :email, value: @patient.email %><br>
+
+        <%= f.label :phone_number, "Phone Number" %>
+        <%= f.text_field :phone_number, value: @patient.phone_number %><br>
+
+        <%= f.label :contact, "Contact Name and Their Relationship to Patient:" %>
+        <%= f.text_field :contact, value: @patient.contact %><br>
+
+        <%= f.label :contact_number, "Contact Phone Number"%>
+        <%= f.text_field :contact_number, value: @patient.contact_number %><br>
+
+        <%= f.fields_for :patient_medications do |ff| %>
+          <div>
+            <%= ff.label :count %>
+            <%= ff.text_field :count %>
+          </div>
+        <div>
+            <%= ff.label :dose %>
+            <%= ff.text_field :dose %>
+          </div>
+
+          <%= ff.fields_for :medication do |fff| %>
+              <div>
+            <%= fff.label :name %>
+            <%= fff.text_field :name %>
+          </div>
+        <div>
+            <%= fff.label :description %>
+            <%= fff.text_field :description %>
+          </div>
+          <% end %>
+
+        <% end %>
+<%= f.submit %>
+
+
+<!-- a form that accepts fields for another form. Look up accepts nested attributes for.  -->
+    </div>
 <% end %>
