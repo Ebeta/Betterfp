@@ -3,65 +3,64 @@
 <%= form_for @patient do |f| %>
 
 <% if @patient.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this profile from being saved:</h2>
+<div id="error_explanation">
+  <h2><%= pluralize(@patient.errors.count, "error") %> prohibited this profile from being saved:</h2>
 
-      <ul>
-      <% @patient.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+  <ul>
+    <% @patient.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class = "patient_fields">
+
+  <%= f.label :name, "Full Name" %><br>
+  <%= f.text_field :name, value: @patient.name, id: "field" %><br>
+
+  <%= f.label :age, "Age" %><br>
+  <%= f.text_field :age, value: @patient.age %><br>
+
+  <%= f.label :gender, "Gender" %><br>
+  <%= f.text_field :gender, value: @patient.gender %><br>
+
+  <%= f.label :email, "Email" %><br>
+  <%= f.text_field :email, value: @patient.email %><br>
+
+  <%= f.label :phone_number, "Phone Number" %><br>
+  <%= f.text_field :phone_number, value: @patient.phone_number %><br>
+
+  <%= f.label :contact, "Contact Name and Their Relationship to Patient:" %><br>
+  <%= f.text_field :contact, value: @patient.contact %><br>
+
+  <%= f.label :contact_number, "Contact Phone Number"%><br>
+  <%= f.text_field :contact_number, value: @patient.contact_number %><br>
+
+  <%= f.fields_for :patient_medications do |ff| %>
+  <div>
+    <%= ff.label :count %><br>
+    <%= ff.text_field :count %><br>
+  </div>
+  <div>
+    <%= ff.label :dose %><br>
+    <%= ff.text_field :dose %><br>
+  </div>
+
+  <%= ff.fields_for :medication do |fff| %>
+  <div>
+    <%= fff.label :name %><br>
+    <%= fff.text_field :name %><br>
+  </div>
+  <div>
+    <%= fff.label :description %><br>
+    <%= fff.text_field :description %><br>
+  </div>
   <% end %>
+  <% end %>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 
-    <div class = "patient_fields">
-
-        <%= f.label :name, "Full Name" %>
-        <%= f.text_field :name, value: @patient.name, id: "field" %><br>
-
-        <%= f.label :age, "Age" %>
-        <%= f.text_field :age, value: @patient.age %><br>
-
-        <%= f.label :gender, "Gender" %>
-        <%= f.text_field :gender, value: @patient.gender %><br>
-
-        <%= f.label :email, "Email" %>
-        <%= f.text_field :email, value: @patient.email %><br>
-
-        <%= f.label :phone_number, "Phone Number" %>
-        <%= f.text_field :phone_number, value: @patient.phone_number %><br>
-
-        <%= f.label :contact, "Contact Name and Their Relationship to Patient:" %>
-        <%= f.text_field :contact, value: @patient.contact %><br>
-
-        <%= f.label :contact_number, "Contact Phone Number"%>
-        <%= f.text_field :contact_number, value: @patient.contact_number %><br>
-
-        <%= f.fields_for :patient_medications do |ff| %>
-          <div>
-            <%= ff.label :count %>
-            <%= ff.text_field :count %>
-          </div>
-        <div>
-            <%= ff.label :dose %>
-            <%= ff.text_field :dose %>
-          </div>
-
-          <%= ff.fields_for :medication do |fff| %>
-              <div>
-            <%= fff.label :name %>
-            <%= fff.text_field :name %>
-          </div>
-        <div>
-            <%= fff.label :description %>
-            <%= fff.text_field :description %>
-          </div>
-          <% end %>
-
-        <% end %>
-<%= f.submit %>
-
-
-<!-- a form that accepts fields for another form. Look up accepts nested attributes for.  -->
-    </div>
+</div>
 <% end %>

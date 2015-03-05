@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   post '/entities' => 'entities#create'
 
   get '/' => 'pages#dashboard'
-  get '/dashboard' => 'pages#dashboard'
+  get '/dashboard' => redirect('/')
 
   get '/entity/new' => 'entities#new', as: :new_entity
 
