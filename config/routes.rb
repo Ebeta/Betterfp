@@ -6,15 +6,21 @@ Rails.application.routes.draw do
   post '/entities' => 'entities#create'
 
   get '/' => 'pages#dashboard'
+  get '/dashboard' => 'pages#dashboard'
 
   get '/entity/new' => 'entities#new', as: :new_entity
 
   resources :patients
   get '/patients' => 'patients#index'
+  get 'patient/new' => 'patients#new'
 
   resources :medications
-  get '/medications' => 'medications#index'
+  get '/' => 'medications#index'
   get '/medications/new' => 'medications#new'
+  get '/medications/show' => 'medications#show'
+  get '/medications' => 'medications#index'
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

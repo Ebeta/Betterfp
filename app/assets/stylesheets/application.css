@@ -16,7 +16,12 @@
 
 
 .sidebar {
-    font-family: Futura, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
     float: left;
 
+}
+
+
+.main_calendar {
+margin: 20px;
 }

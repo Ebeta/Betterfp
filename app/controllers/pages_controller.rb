@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   def dashboard
     @entity = current_user.entity
     @patient = @entity.patients.new
-
+    @patients = current_user.patients
   end
 
 end

@@ -1,20 +1,19 @@
-show.html.erb
-SHOWS PATIENT YOU JUST CREATED. Also allows to edit.
-Also displays list of medications patient has.
-Allows to edit each medication.
+
 
 
 <div class = "patient">
 
-    <h4> Patient Profile </h4>
+    <h4> <%= @patient.name%>'s Profile </h4> <!-- ex. Alaa's Profile -->
 
     <%= render 'form' %>
 
     <h4> Medications </h4>
-    <link_to 'Add a Medication to patient.'
+    <%= link_to 'Add a Medication to Patient.', 'path'%> <!-- Forms below are collapsable. -->
+<ol>
+    <% @patient.medications.all.each do |med| %>
+    <li> <%= med.name %> </li>
+    <% end %>
 
-    List of medications:
-
-
+</ol>
 
     <!-- Patient Medication Form in layouts/_patient_medication -->

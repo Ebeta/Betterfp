@@ -3,10 +3,11 @@ class EntitiesController < ApplicationController
 	before_action :has_entity?, only: :new
 	def display
 		@entity = Entity.new
+
 	end
 	
 	def create
-		@entity = Entity.create(entities_params)
+
 		redirect_to entities_path
 	end
 
