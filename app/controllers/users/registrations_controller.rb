@@ -25,18 +25,16 @@ class Users::RegistrationsController < Devise::RegistrationsController
         expire_data_after_sign_in!
         respond_with user, location: after_inactive_sign_up_path_for(user)
       end
+      user.add_entity(was_signed_in)
+      if current_user
+        redirect_to root_path
+      else
+        sign_up(resource_name, user)
+        redirect_to new_entity_path
+      end
     else
       clean_up_passwords user
       respond_with user
-    end
-    # end of devise
-
-    user.add_entity(was_signed_in)
-    if current_user
-      redirect_to root_path
-    else
-      sign_up(resource_name, user)
-      redirect_to new_entity_path
     end
   end
 
