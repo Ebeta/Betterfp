@@ -1,34 +1,18 @@
+<div class = "main-container">
 
-
-<div class = "sidebar">
-    <h3>
-        <ul>
-    <li><%= link_to 'Manage Patients', patients_path %></li>
-
-    <li><%= link_to 'Add A Patient', new_patient_path %></li>
-
-    <li>Add A Medication To Patient </li> </h3>
-
-    <!-- collection of patients in a scroll down bar -->
-
-
-</div>
-
-
-<div class = "main_calendar">
-
-Schedule of Medications For Each Patient
-
- <% @patients.each do |patient| %>
-   <li> <%= patient.id %> <%= patient.name %>
-    <% patient.medications.each do |med| %>
-      <%= med.name %>
-      <% end %>
-
-
-
-
-
+Schedule of Medications For Each Patient This is the dashboard page.
+<table>
+ <ul>
+     <% @patients.each do |patient| %>
+       <li> <%= patient.id %> <%= patient.name %>
+       <p1> <%= patient.age %>
+        <% patient.medications.each do |med| %>
+          <%= med.name %>
+      </p1>
+          <% end %>
+        </li>
+    </ul>
+</table>
     <%#= patient.medications.map{|m| m.name }.join(", ") %> </li>
     <% end %>
 

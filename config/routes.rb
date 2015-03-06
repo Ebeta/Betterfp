@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/dashboard' => redirect('/')
 
   get '/entity/new' => 'entities#new', as: :new_entity
+  get '/spanish' => redirect('/?lang=es')
 
   resources :patients
   get '/patients' => 'patients#index'
