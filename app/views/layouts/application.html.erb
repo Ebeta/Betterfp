@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>MedplusV3</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>MedPlus</title>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,300italic' rel='stylesheet' type='text/css'>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-<div class = "navbar">
+  <body>
 
-<!-- Logo Goes Here, to the right-->
-
-<ul>
-    <!-- Navigation Bar goes here, also to the right-->
-    <li> <%= t(:my_account)  %></li>
-    <li> <%= t(:help) %>  </li>
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>
-  </li>
-<% end %>
-   </ul>
-
-</div>
-<div class= "maincontainer">
-
-    <%= yield %>
-
-</div>
-
-<div class= "footer">
-
-<ul>
-    <li> About Us </li>
-    <li> Contact </li>
-    <li> Location </li>
-</ul>
-
-   </div>
+    <div class = "nav">
+    <!-- Logo Goes Here, to the right-->
+      <ul>
+          <!-- Navigation Bar goes here, also to the right-->
+        <li> <%= link_to t(:my_account), '#' %></li>
+        <li> <%= link_to t(:help), '#' %>  </li>
+        <li> <%= link_to "Language", '#' %> </li>
 
 
+        <% if user_signed_in? %>
+          <li>
+          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+          </li>
+        <% else %>
+          <li>
+          <%= link_to('Login', new_user_session_path)  %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
 
-</body>
+    <!-- Nav Ends-->
+
+    <div class = "sidebar">
+      <ul>
+          <li><%= link_to 'Manage Patients', patients_path %></li>
+          <li><%= link_to 'Add A Patient', new_patient_path %></li>
+          <li>Add A Medication To Patient </li>
+          <!-- collection of patients in a scroll down bar -->
+      </ul>
+    </div>
+
+    <!-- Sidebar Ends-->
+
+    <div class= "main-container">
+
+        <%= yield %>
+    </div>
+
+    <!-- Main Container Ends-->
+
+    <div class= "footer">
+      <ul>
+          <li> About Us </li>
+          <li> Contact </li>
+          <li> Location </li>
+      </ul>
+    </div>
+  </body>
 </html>
