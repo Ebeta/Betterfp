@@ -1,20 +1,54 @@
 <div class = "main-container">
 
-Schedule of Medications For Each Patient This is the dashboard page.
-<table>
- <ul>
-     <% @patients.each do |patient| %>
-       <li> <%= patient.id %> <%= patient.name %>
-       <p1> <%= patient.age %>
-        <% patient.medications.each do |med| %>
-          <%= med.name %>
-      </p1>
-          <% end %>
+<p1>Calendar</p1><br>
+<p2> Keep track of each patient profile's medication.</p2>
+
+
+ <div id="tabs_container">
+
+      <!-- These are the tabs -->
+      <ul class="tabs">
+        <li class="active">
+          <a href="#" rel="#tab_1_contents" class="tab">All</a>
         </li>
-    </ul>
-</table>
-    <%#= patient.medications.map{|m| m.name }.join(", ") %> </li>
-    <% end %>
+        <li><a href="#" rel="#tab_2_contents" class="tab">Patient 1</a></li>
+        <li><a href="#" rel="#tab_3_contents" class="tab"> Patient 2</a></li>
+      </ul>
+
+      <!-- This is used so the contents don't appear to the
+           right of the tabs -->
+      <div class="clear"></div>
+
+      <!-- This is a div that hold all the tabbed contents -->
+      <div class="tab_contents_container">
+
+        <!-- Tab 1 Contents -->
+        <div id="tab_1_contents" class="tab_contents tab_contents_active">
+
+        <% @patients.each do |patient| %>
+            <li>
+                <%= patient.name %>
+                <%= patient.age %>
+                <% patient.medications.each do |med| %>
+                <%= med.name %>
+              <% end %>
+            </li>
+        <% end %>
+
+        </div>
+
+        <!-- Tab 2 Contents -->
+        <div id="tab_2_contents" class="tab_contents">
+          Patient 2 medications and times.
+        </div>
+
+        <!-- Tab 3 Contents -->
+        <div id="tab_3_contents" class="tab_contents">
+          Patient 3 medications and times.
+        </div>
+
+      </div>
+    </div>
 
 
 </div>

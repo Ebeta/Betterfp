@@ -11,12 +11,12 @@
   <body>
 
     <div class = "nav">
-    <!-- Logo Goes Here, to the right-->
+    <%= image_tag "medplus2.png", id: "logo" %>
       <ul>
           <!-- Navigation Bar goes here, also to the right-->
         <li> <%= link_to t(:my_account), '#' %></li>
         <li> <%= link_to t(:help), '#' %>  </li>
-        <li> <%= link_to "Language", '#' %> </li>
+        <li> <%= link_to "LANGUAGE", '#' %> </li>
 
 
         <% if user_signed_in? %>
@@ -35,28 +35,28 @@
 
     <div class = "sidebar">
       <ul>
-          <li><%= link_to 'Manage Patients', patients_path %></li>
-          <li><%= link_to 'Add A Patient', new_patient_path %></li>
-          <li>Add A Medication To Patient </li>
+          <li><%=image_tag "plusicon.png", id: "plus-image"%> <%= link_to 'MANAGE PATIENTS', patients_path %></li>
+          <li><%= link_to 'ADD A PATIENT', new_patient_path %></li>
+          <li>ADD A MEDICATION TO A PATIENT </li>
           <!-- collection of patients in a scroll down bar -->
       </ul>
     </div>
 
     <!-- Sidebar Ends-->
 
-    <div class= "main-container">
+    <div class= "main">
 
         <%= yield %>
     </div>
 
     <!-- Main Container Ends-->
+  </body>
 
-    <div class= "footer">
+   <div class= "footer">
       <ul>
           <li> About Us </li>
           <li> Contact </li>
           <li> Location </li>
       </ul>
     </div>
-  </body>
 </html>

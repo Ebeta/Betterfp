@@ -16,6 +16,9 @@
 
         <%= f.label "End Date:" %>
         <%= f.text_field :end_date, value: @patient_medication.end_date %>
+
+        <%= f.label "Taken:" %>
+        <%= f.boolean :taken, value: @patient_medication.taken %>
     </div>
 
 <% end %>

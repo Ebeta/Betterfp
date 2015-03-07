@@ -14,25 +14,40 @@
  *= require_self
  */
 
+html {
+    /*background-color: #F8F9F4;*/
+}
+
 
 .body {
     font-family: 'Source Sans Pro', sans-serif;
     line-height: 1;
     border: 1px solid;
     overflow: auto;
+    height:100%;
+    padding-bottom:60px;
+
 }
 
 .nav {
      font-family: 'Source Sans Pro', sans-serif;
-     border: 1px solid;
-     border-color: red;
      margin: 0;
-     height: 40px;
+     height: 60px;
      float:left;
      width: 100%;
      top: 0;
      left:0;
      right:0;
+     position: absolute;
+     width: 100%;
+     color: #ffffff;
+     /* Adds shadow to the bottom of the bar */
+     -webkit-box-shadow: 0px 0px 8px 0px #000000;
+     -moz-box-shadow: 0px 0px 8px 0px #000000;
+     box-shadow: 0px 0px 8px 0px #000000;
+     /* Adds the transparent background */
+     background-color: white;
+     color: rgba(1, 1, 1, 0.8);
 
 }
 
@@ -40,20 +55,16 @@
      font-size: 13px;
      float:right;
      margin-right: 30px;
-     background-color:
-
-
 
 }
 
 .nav li{
     display:inline-block;
-    background-color: white;
     /*padding: 10px;*/
     margin-right: 15px;
     margin-left: 15px;
     border-radius: 2px;
-    color: purple;
+    color: white;
     text-decoration: none;
   /*  float: right;*/
 }
@@ -69,59 +80,152 @@
     border-radius: 2px;
 }
 
-
 .sidebar {
+    /*margin-top: 60px;*/
     font-family: 'Source Sans Pro', sans-serif;
-    width:350px;
+    width:300px;
     float:left;
     padding:10px;
     height: 400px;
     border: 1px solid;
+    line-height: 2;
+    font-size: 15px;
 }
 
 .sidebar ul {
     list-style-type: none;
+    text-decoration: none;
 }
 
+.sidebar a{
+
+    list-style-type: none;
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar a:hover{
+    color:purple;
+}
 
 .main-container {
+    margin-top: 60px;
     font-family: 'Source Sans Pro', sans-serif;
     margin: 10px;
+    margin-left: 20px;
     padding:15px;
     border: 1px solid;
     width: 400 px;
     overflow: auto;
-
+    min-height:100%;
    /* display: inline-table;*/
-
 }
 
+.main {
+    margin-top: 70px;
+}
 .main-container ul{
     list-style-type: none;
 }
 
-.main-container p1 {
+.main-container p1{
+    font-size: 25px;
+
+}
+
+.main-container p2{
     font-style: italic;
-    font-size: 10px;
+    font-size: 14px;
+    display:inline-block;
+    margin-bottom: 15px;
+    position: relative;
 }
 
 .footer {
     font-family: 'Source Sans Pro', sans-serif;
-
     width:100%;
     height:50px;
-    position:absolute;
+    position: absolute;
     bottom:0;
     left:0;
     background-color:purple;
+    clear: both;
 }
 
 .footer li{
+    margin-top: 10px;
+    bottom:0;
     font-size: 15px;
     font-weight: bold;
     display: inline;
     color:white;
     margin-right: 20px;
+
 }
 
+/*######### Image Stylizing #########*/
+
+#plus-image {
+
+    position:relative;
+}
+
+#logo {
+    margin-left: 40px;
+    margin-bottom: 5px;
+}
+
+
+
+
+/*###### Tabbed Container in Dashboard ######*/
+
+a:active {
+    outline: none;
+}
+a:focus {
+    -moz-outline-style: none;
+}
+#tabs_container {
+    width: 500px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 15px;
+}
+#tabs_container ul.tabs {
+    list-style: none;
+    border-bottom: 1px solid #ccc;
+    height: 21px;
+    margin: 0;
+}
+#tabs_container ul.tabs li {
+    float: left;
+}
+#tabs_container ul.tabs li a {
+    padding: 6px 15px;
+    display: block;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    margin-right: 2px;
+    text-decoration: none;
+    background-color: #efefef;
+}
+#tabs_container ul.tabs li.active a {
+    background-color: #fff;
+    /*padding-top: 4px;*/
+}
+div.tab_contents_container {
+    border: 1px solid #ccc;
+  /*  border-top: none;*/
+    padding: 10px;
+}
+div.tab_contents {
+    display: none;
+}
+div.tab_contents_active {
+    display: block;
+}
+div.clear {
+    clear: both;
+}
 
