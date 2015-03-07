@@ -11,6 +11,8 @@ class User < ActiveRecord::Base
 			# for establishments / teams
 			self.entity = current_user.entity
 			self.save
+		else
+			self.entity = Entity.create(title: "Individual")
 		end
 	end
 

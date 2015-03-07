@@ -5,8 +5,7 @@ Rails.application.routes.draw do
 
   post '/entities' => 'entities#create'
 
-  get '/' => 'pages#dashboard'
-  get '/dashboard' => redirect('/')
+  root 'pages#dashboard'
 
   get '/entity/new' => 'entities#new', as: :new_entity
   get '/spanish' => redirect('/?lang=es')
