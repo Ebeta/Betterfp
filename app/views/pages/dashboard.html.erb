@@ -27,8 +27,7 @@
 
         <% @patients.each do |patient| %>
             <li>
-                <%= patient.name %>
-                <%= patient.age %>
+                <%= patient.name %>, <%= patient.age %> <br>
                 <% patient.medications.each do |med| %>
                 <%= med.name %>
               <% end %>
@@ -49,6 +48,4 @@
 
       </div>
     </div>
-
-
 </div>

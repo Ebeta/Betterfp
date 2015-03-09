@@ -38,7 +38,7 @@ class PatientsController < ApplicationController
         end
     end
 
-    def delete
+    def destroy
         @patient.destroy
     end
 

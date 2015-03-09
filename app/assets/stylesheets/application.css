@@ -123,6 +123,8 @@ html {
 
 .main {
     margin-top: 70px;
+    display: block;
+    margin-bottom: 40px;
 }
 .main-container ul{
     list-style-type: none;
@@ -136,7 +138,7 @@ html {
 .main-container p2{
     font-style: italic;
     font-size: 14px;
-    display:inline-block;
+   /* display:inline-block;*/
     margin-bottom: 15px;
     position: relative;
 }
@@ -147,10 +149,19 @@ html {
     height:50px;
     margin-top: 50px;
     display: block;
+    position: fixed;
     bottom:0;
     left:0;
     background-color:purple;
     clear: both;
+}
+
+.patient_list {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: block;
+    margin-left: 20px;
+    width: 500px;
+    float: left;
 }
 
 .footer li{
@@ -188,7 +199,7 @@ a:focus {
     -moz-outline-style: none;
 }
 #tabs_container {
-    width: 500px;
+    width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 15px;
 }
