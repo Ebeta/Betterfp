@@ -229,3 +229,19 @@ div.clear {
     clear: both;
 }
 
+
+.scrollbox {
+    height: 200px;
+    overflow: scroll;
+    border: 1px solid #000;
+    display: inline-block;
+    width: 500px;
+    padding: 0;
+}
+.medication-item {
+    list-style: none;
+    padding: 3px;
+}
+.medication-item:nth-child(even) {
+    background-color: #eee;
+}

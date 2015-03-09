@@ -37,27 +37,28 @@
   <%= f.label :contact_number, "Contact Phone Number"%><br>
   <%= f.text_field :contact_number, value: @patient.contact_number %><br>
 
-  <%= f.fields_for :patient_medications do |ff| %>
-  <div>
-    <%= ff.label :count %><br>
-    <%= ff.text_field :count %><br>
-  </div>
-  <div>
-    <%= ff.label :dose %><br>
-    <%= ff.text_field :dose %><br>
-  </div>
 
-  <%= ff.fields_for :medication do |fff| %>
-  <div>
-    <%= fff.label :name %><br>
-    <%= fff.text_field :name %><br>
-  </div>
-  <div>
-    <%= fff.label :description %><br>
-    <%= fff.text_field :description %><br>
-  </div>
-  <% end %>
-  <% end %>
+
+<!-- <datalist id="browsers">
+  <%# @medilexicon.each do |medicine| %>
+    <option value = "<%# medicine.content %>"></option>
+  <%# end %>
+</datalist> -->
+ <script>
+//   $(function() {
+//     $(".filter").on('keyup', function() {
+//       input = $(this).val().toLowerCase();
+//       $(".scrollbox").children(".medication-item").each(function() {
+//         if( $(this).text().toLowerCase().search(input) ) {
+//           $(this).show();
+//         } else {
+//           $(this).hide();
+//         }
+//       })
+//     });
+//   });
+</script>
+
   <div class="actions">
     <%= f.submit %>
   </div>
