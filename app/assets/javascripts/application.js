@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require_tree .
 
-
 $(document).ready(function(){
 
  // Set up a listener so that when anything with a class of 'tab'
