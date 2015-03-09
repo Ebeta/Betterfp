@@ -1,6 +1,5 @@
-
 5.times do
-    Entity.create(name: Faker::Company.name, name: Faker::NAME)
+    Entity.create(name: Faker::Company.name)
 end
 
 
@@ -8,10 +7,6 @@ Entity.all.each do |e|
     5.times do
         Patient.create(name: Faker::Name.name, email: Faker::Internet.email, entity: e)
     end
-end
-
-10.times do
-    Medication.create(name: Faker::Name.name, contact: Faker::Name.name, age: Faker::Number.number(2))
 end
 
 
@@ -26,11 +21,11 @@ end
 # require 'faker'
 
 
-Entity.create(title: "Hospital", name: "Admin", location: "Miami, FL")
-Entity.create(title: "Hospital", name: "Admin", location: "Miami, FL")
-Entity.create(title: "Hospital", name: "Admin", location: "Miami, FL")
-Entity.create(title: "Hospital", name: "Admin", location: "Miami, FL")
-Entity.create(title: "Hospital", name: "Admin", location: "Miami, FL")
+# Entity.create(title: "Hospital", name: "Admin", location: "Miami, FL")
+# Entity.create(title: "Hospital", name: "Admin", location: "Miami, FL")
+# Entity.create(title: "Hospital", name: "Admin", location: "Miami, FL")
+# Entity.create(title: "Hospital", name: "Admin", location: "Miami, FL")
+# Entity.create(title: "Hospital", name: "Admin", location: "Miami, FL")
 
 
 Entity.all.each do |e|
@@ -44,9 +39,9 @@ Entity.all.each do |e|
 end
 
 
-Medication.create(name: "Xanax", description: "Anti-depressant")
-Medication.create(name: "Tylenol", description: "Advil's enemy")
-Medication.create(name: "Advil", description: "Pain-Reliever")
-Medication.create(name: "OtherMed", description: "Anti-itch")
-Medication.create(name: "Med5", description: "Fever reducer")
+# Medication.create(name: "Xanax", description: "Anti-depressant")
+# Medication.create(name: "Tylenol", description: "Advil's enemy")
+# Medication.create(name: "Advil", description: "Pain-Reliever")
+# Medication.create(name: "OtherMed", description: "Anti-itch")
+# Medication.create(name: "Med5", description: "Fever reducer")
 
