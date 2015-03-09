@@ -6,6 +6,11 @@ class PatientsController < ApplicationController
     end
 
     def new
+        if params[:s]
+            @medilexicon = Nokogiri::HTML(RestClient.post "http://www.medilexicon.com/drugsearch.php?z=true", {params: {"foo" => "bar"}}).css('#wrapper #level0 #main ul li')
+        else
+            @medilexicon = []
+        end
         @patient = current_user.entity.patients.new
         pm = @patient.patient_medications.build
         pm.build_medication
