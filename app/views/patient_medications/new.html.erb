@@ -1,0 +1,6 @@
+<%= form_for @patient_medication do |f| %>
+	<%= f.collection_select :patient_id, current_user.patients, :id, :name %>
+	<%= f.collection_select :medication_id, Medication.all, :id, :name %>
+	<%= f.time_field :dose_time %>
+	<%= f.submit %>
+<% end %>

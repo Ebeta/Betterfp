@@ -15,8 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-
-$(document).ready(function(){
+runScript = function(){
 
  // Set up a listener so that when anything with a class of 'tab'
  // is clicked, this function is run.
@@ -37,4 +36,8 @@ $(document).ready(function(){
   $(this.rel).addClass('tab_contents_active');
 
  });
-});
+
+}
+
+$(document).ready(runScript);
+$(document).on('page:load', runScript);

@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 5.times do
     Entity.create(name: Faker::Company.name, name: Faker::NAME)
 end
@@ -14,7 +14,7 @@ end
     Medication.create(name: Faker::Name.name, contact: Faker::Name.name, age: Faker::Number.number(2))
 end
 
-=======
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -49,4 +49,4 @@ Medication.create(name: "Tylenol", description: "Advil's enemy")
 Medication.create(name: "Advil", description: "Pain-Reliever")
 Medication.create(name: "OtherMed", description: "Anti-itch")
 Medication.create(name: "Med5", description: "Fever reducer")
->>>>>>> addpages
+

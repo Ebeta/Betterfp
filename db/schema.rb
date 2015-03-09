@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150301192922) do
+ActiveRecord::Schema.define(version: 20150309031652) do
 
   create_table "entities", force: :cascade do |t|
     t.string   "location"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20150301192922) do
     t.boolean  "taken"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.time     "dose_time"
   end
 
   add_index "patient_medications", ["medication_id"], name: "index_patient_medications_on_medication_id"

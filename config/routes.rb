@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   get '/medications/show' => 'medications#show'
   get '/medications' => 'medications#index'
 
+  get '/patient_medications/new' => 'patient_medications#new', as: :new_patient_medication
+
+  post '/patient_medications' => 'patient_medications#create'
 
 
 

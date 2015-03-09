@@ -1,5 +1,5 @@
 class PatientsController < ApplicationController
-    before_action :access_lvl2?, only: [:create, :edit, :destroy]
+    # before_action :access_lvl2?, only: [:create, :edit, :destroy]
 
     def index
         @patients = current_user.entity.patients
@@ -26,7 +26,7 @@ class PatientsController < ApplicationController
     def create
         @patient = current_user.entity.patients.create(patient_params)
         if @patient.save
-            redirect_to @patient
+            redirect_to root_path
         else
             render :action => 'new'
         # PatientMedication.create(patient: patient, medication: med)
