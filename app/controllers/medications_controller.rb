@@ -1,12 +1,12 @@
 class MedicationsController < InheritedResources::Base
 
     def index
-    @medications = Medications.all
+    @medications = Medication.all
 
     end
 
     def new
-        @medication = current_user.medication.new
+        @medication = Medication.new
     end
 
     def show

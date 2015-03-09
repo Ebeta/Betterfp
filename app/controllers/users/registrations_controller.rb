@@ -35,7 +35,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords user
       respond_with user
-    end
+    end 
   end
 
 
