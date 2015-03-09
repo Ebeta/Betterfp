@@ -1,51 +1,9 @@
 <div class = "patients_new_page">
-<%= form_tag new_patient_path, method:"get" do %>
-  <p>
-    <%= text_field_tag :s, params[:s], class: "filter" %>
-    <%= submit_tag "Search", name:nil %>
-  </p>
-<% end %>
-<style>
-.scrollbox {
-	height: 200px;
-	overflow: scroll;
-	border: 1px solid #000;
-	display: inline-block;
-	width: 500px;
-	padding: 0;
-}
-.medication-item {
-	list-style: none;
-	padding: 3px;
-}
-.medication-item:nth-child(even) {
-	background-color: #eee;
-}
-</style>
-<input list="browsers" />
-<datalist id="browsers">
-  <% @medilexicon.each do |medicine| %>
-    <option value = "<%= medicine.content %>"></option>
-  <% end %>
-</datalist>
-<script>
-	$(function() {
-		$(".filter").on('keyup', function() {
-			input = $(this).val().toLowerCase();
-			$(".scrollbox").children(".medication-item").each(function() {
-				if( $(this).text().toLowerCase().search(input) ) {
-					$(this).show();
-				} else {
-					$(this).hide();
-				}
-			})
-		});
-	});
-</script>
+
+
     New Patient Profile.
 
     <%= render 'form' %>
-
 
     <%= link_to 'Back', patients_path %>
 
