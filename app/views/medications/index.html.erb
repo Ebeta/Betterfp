@@ -2,14 +2,18 @@
 <!-- Lists all medications. Can create new. -->
 
 <div class = "medication_list">
+<% @medications = [] %>
 
-    <% @medication.each do |medication| %>
+	<% @medications.each do |med| %>
+		<%= med.name %><br>
+	<% end %>
 
-    <%= @medications.all %>
+	<%# medication.all %>
+		<%# if medication.size == 0 %>
+	<%# end %>
 
-        <% if medications.size == 0 %>
-            <em> No medications found. <%= link_to "Add a new medication for a patient here.", new_medication_path %>. </em>
-        <% end %>
-    <% end %>
+<% if @medications.empty? %>
+	<em> No medications found. <%= link_to "Add a new medication for a patient here.", new_medication_path %>.</em>
+<% end %>
 
 </div>

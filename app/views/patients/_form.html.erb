@@ -31,25 +31,13 @@
   <%= f.label :phone_number, "Phone Number" %><br>
   <%= f.text_field :phone_number, value: @patient.phone_number %><br>
 
-  <%= f.label :contact, "Contact Name and Their Relationship to Patient:" %><br>
+  <%= f.label :contact, "Emergency Contact" %><br>
   <%= f.text_field :contact, value: @patient.contact %><br>
 
   <%= f.label :contact_number, "Contact Phone Number"%><br>
   <%= f.text_field :contact_number, value: @patient.contact_number %><br>
 
-
-    <%= f.fields_for :medications do |ff| %>
-  <div>
-    <%= ff.label :name, "Medication Name:" %><br>
-    <%= ff.text_field :name %><br>
-  </div>
-  <div>
-    <%= ff.label :description, "Medication Description" %><br>
-    <%= ff.text_field :description %><br>
-  </div>
-  <% end %>
-
- <%= f.fields_for :patient_medications do |ff| %>
+  <%= f.fields_for :patient_medications do |ff| %>
   <div>
     <%= ff.label :count %><br>
     <%= ff.text_field :count %><br>
@@ -58,11 +46,20 @@
     <%= ff.label :dose %><br>
     <%= ff.text_field :dose %><br>
   </div>
-  <% end %>
 
+  <%= ff.fields_for :medication do |fff| %>
+  <div>
+    <%= fff.label :name %><br>
+    <%= fff.text_field :name %><br>
+  </div>
+  <div>
+    <%= fff.label :description %><br>
+    <%= fff.text_field :description %><br>
+  </div>
+  <% end %>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
-
 </div>
 <% end %>
