@@ -23,4 +23,6 @@ es:
     hello: "Hola Mundo"
     my_account: "Mi cuenta"
     help: "Ayuda"
-    Fullname: "Nombre"
+	Fullname: "Nombre"
+	login: "Ya eres miembro? Iniciar!"
+

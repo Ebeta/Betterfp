@@ -50,6 +50,16 @@ end
     puts "Language is being set to Spanish! YAYAY!"
     I18n.locale = params[:lang] || :en
   end
+
+  before_filter :set_locale
+  def set_locale
+    I18n.locale = params[:locale] if params[:locale].present?
+  end
+
+ def default_url_options(options = {})
+    {locale: I18n.locale}
+  end
+
 end
 
 
