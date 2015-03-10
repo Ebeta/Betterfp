@@ -1,7 +1,19 @@
+    <div class = "sidebar">
+      <ul>
+
+          <li><%=image_tag "plusicon.png", id: "sidebar-image"%> <%= link_to 'MANAGE PATIENTS', '/patients' %></li>
+          <li><%= image_tag "adduser.png", id: "sidebar-image" %> <%= link_to 'ADD A PATIENT', new_patient_path %></li>
+          <li><%= image_tag "", id: "sidebar-image" %> <%= link_to 'ADD A MEDICATION TO A PATIENT', new_patient_medication_path %></li>
+          <!-- collection of patients in a scroll down bar -->
+      </ul>
+    </div>
+
+    <!-- Sidebar Ends-->
+
 <div class = "main-container">
 
-<p1>Calendar</p1><br>
-<p2> Keep track of each patient profile's medication.</p2>
+<h2>Calendar</h2><br>
+<p2> Keep track of each patient profile's medication.</p2> <br>
 
 
  <div id="tabs_container">
@@ -37,8 +49,8 @@
 
         <!-- Tab 2 Contents -->
         <% @patients.each do |patient| %>
-          <div id="tab_<%= @patients.index(patient) +1%>_contents" class="tab_contents">
-            <%= patient.name %><br>
+          <div id="tab_<%= @patients.index(patient)+1 %>_contents" class="tab_contents">
+            <%= link_to patient.name, patient_path(patient) %><br>
             <ul>
               <% patient.patient_medications.each do |patient_medication| %>
               <li>

@@ -21,7 +21,7 @@ class PatientsController < ApplicationController
     end
 
     def create
-        @patient = current_user.entity.patients.create(patient_params)
+        @patient = current_user.entity.patients.new(patient_params)
         if @patient.save
             redirect_to root_path
         else

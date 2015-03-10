@@ -7,42 +7,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
-
-  <body>
-
+<header>
     <div class = "nav">
-    <%= link_to (image_tag "medplus2.png", id: "logo"), '/' %>
+    <%= link_to (image_tag "whitelogo.png", id: "logo"), '/' %>
       <ul>
           <!-- Navigation Bar goes here, also to the right-->
-        <li> <%= link_to t(:my_account), '#' %></li>
-        <li> <%= link_to t(:help), '#' %>  </li>
-        <li> <%= link_to "Language", '#' %> </li>
-
-
-        <% if user_signed_in? %>
+          <% if user_signed_in? %>
           <li>
           <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
           </li>
         <% else %>
           <li>
-          <%= link_to('Login', new_user_session_path)  %>
+         <%= link_to('Already A Member? Login!', new_user_session_path, id: "login")  %>
           </li>
         <% end %>
-      </ul>
-    </div>
+        <li> <%= link_to "Language", '#' %> </li>
+        <li> <% if user_signed_in? %> <%= link_to t(:my_account), '#' %><% end %></li>
+        <li> <% if user_signed_in? %><%= link_to t(:help), '#' %> <% end%> </li>
 
+      </ul>
     <!-- Nav Ends-->
-
-    <div class = "sidebar">
-      <ul>
-          <li><%=image_tag "plusicon.png", id: "plus-image"%> <%= link_to 'MANAGE PATIENTS', root_path %></li>
-          <li><%= link_to 'ADD A PATIENT', new_patient_path %></li>
-          <li><%= link_to 'ADD A MEDICATION TO A PATIENT', new_patient_medication_path %></li>
-          <!-- collection of patients in a scroll down bar -->
-      </ul>
     </div>
-
-    <!-- Sidebar Ends-->
+    <!-- Header Ends-->
+</header>
+  <body>
 
     <div class= "main">
 
@@ -51,13 +39,9 @@
 
     <!-- Main Container Ends-->
 
+</body>
+<!-- Body Ends-->
 
-   <div class= "footer">
-      <ul>
-          <li> About Us </li>
-          <li> Contact </li>
-          <li> Location </li>
-      </ul>
-      </body>
-    </div>
+
 </html>
+

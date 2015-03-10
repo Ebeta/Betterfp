@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   get '/spanish' => redirect('/?lang=es')
 
   resources :patients
-  get '/patients' => 'patients#index'
+  get '/patients/:id' => 'patients#index'
   get 'patient/new' => 'patients#new'
+
 
   resources :medications
   get '/' => 'medications#index'

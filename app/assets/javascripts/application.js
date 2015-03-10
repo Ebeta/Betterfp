@@ -10,10 +10,13 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require bootstrap
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// Tabs and Tabs Container on Calendar page
 
 runScript = function(){
 
@@ -41,3 +44,25 @@ runScript = function(){
 
 $(document).ready(runScript);
 $(document).on('page:load', runScript);
+
+
+// Collapsable Medication form on Patient Form //
+
+$(".addmedheader").click(function () {
+
+    $addmedheader = $(this);
+    //getting the next element
+    $addmedcontent = $addmedheader.next();
+    //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
+    $addmedcontent.slideToggle(500, function () {
+        //execute this after slideToggle is done
+        //change text of header based on visibility of content div
+        $addmedheader.text(function () {
+            //change text based on condition
+            return $addmedcontent.is(":visible") ? "+ Add A Medication" : "- Add A Medication";
+        });
+    });
+
+});
+
+

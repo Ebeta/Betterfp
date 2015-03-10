@@ -11,11 +11,14 @@ class PatientMedicationsController < InheritedResources::Base
         redirect_to :back
     end
 
+    def edit
+    end
+
+    def destroy
+    end
+
     private
     def patient_medication_params
         params.require(:patient_medication).permit(:dose_time, :medication_id, :patient_id)
     end
-
-
-
 end

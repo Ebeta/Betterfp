@@ -1,7 +1,17 @@
-<div class = "patients_new_page">
+    <div class = "sidebar">
+      <ul>
+          <li><%=image_tag "plusicon.png", id: "sidebar-image"%> <%= link_to 'MANAGE PATIENTS', root_path %></li>
+          <li><%= image_tag "#", id: "sidebar-image" %> <%= link_to 'ADD A PATIENT', new_patient_path %></li>
+          <li><%= image_tag "#", id: "sidebar-image" %> <%= link_to 'ADD A MEDICATION TO A PATIENT', new_patient_medication_path %></li>
+          <!-- collection of patients in a scroll down bar -->
+      </ul>
+    </div>
+
+    <!-- Sidebar Ends-->
 
 
-    New Patient Profile.
+<div class = "patients_new_wrapper">
+
 
     <%= render 'form' %>
 
