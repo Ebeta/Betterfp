@@ -23,5 +23,6 @@ en:
   hello: "Hello world"
   my_account: "My Account"
   help: "Help"
+  login: "Already A Member? Login!"
 
 
