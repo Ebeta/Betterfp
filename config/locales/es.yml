@@ -20,7 +20,19 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
-    hello: "Hola Mundo"
-    my_account: "Mi cuenta"
-    help: "Ayuda"
-    login: "Ya eres miembro? Iniciar!"
+  fullname: Nombre
+  hello: "Hola"
+  help: Ayuda
+  login: "Ya eres miembro? Iniciar!"
+  my_account: "Mi cuenta"
+  age: Edad
+  gender: Género
+  email: "Correo Electrónico"
+  phonenumber: "Número De Teléfono"
+  emergencycontactname: "Nombre De Contacto De Emergencia"
+  emergencycontactnumber: "Número De Contact De Emergencia"
+  createpatient: "Crear Paciente"
+  back: "Atras"
+  managepatients: "GESTIONAR LOS PACIENTES"
+  addapatient: "AÑADIR UN PACIENTE"
+  addmedication: "AÑADIR MEDICACIÓN AL PACIENTE"

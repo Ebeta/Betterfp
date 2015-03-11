@@ -19,29 +19,30 @@
     <p5><em>* = Required fields.</em> <br>
       <br>To edit, type your changes and submit. All changes are automatically saved.</p5> <br>
 
-      <br><%= f.label :name, "Full Name*" %><br>
+      <br><%= f.label :name, t(:fullname)* %><br>
       <%= f.text_field :name, value: @patient.name, id: "patient-form-fields" %><br>
 
-      <%= f.label :age, "Age*" %><br>
+      <%= f.label :age, t(:age)* %><br>
       <%= f.text_field :age, value: @patient.age, id: "patient-form-fields" %><br>
 
-      <%= f.label :gender, "Gender*" %><br>
+      <%= f.label :gender, t(:gender)* %><br>
       <%= f.text_field :gender, value: @patient.gender, id: "patient-form-fields" %><br>
 
-      <%= f.label :email, "Email" %><br>
+      <%= f.label :email, t(:email) %><br>
       <%= f.text_field :email, value: @patient.email, id: "patient-form-fields" %><br>
 
-      <%= f.label :phone_number, "Phone Number" %><br>
+      <%= f.label :phone_number, t(:phonenumber) %><br>
       <%= f.text_field :phone_number, value: @patient.phone_number, id: "patient-form-fields" %><br>
 
-      <%= f.label :contact, "Emergency Contact Name" %><br>
+      <%= f.label :contact, t(:emergencycontactname) %><br>
       <%= f.text_field :contact, value: @patient.contact, id: "patient-form-fields" %><br>
 
-      <%= f.label :contact_number, "Emergency Contact Phone Number"%><br>
+      <%= f.label :contact_number, t(:emergencycontactnumber) %><br>
       <%= f.text_field :contact_number, value: @patient.contact_number, id: "patient-form-fields" %><br>
+
   </div>
   <div class="actions">
-    <br><%= f.submit nil, class: 'signup-button' %>
+    <br><%= f.submit t(:createpatient), class: 'signup-button' %>
   </div>
 </div>
 <% end %>
