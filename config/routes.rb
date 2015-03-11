@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   post '/entities' => 'entities#create'
 
   get '/' => 'pages#dashboard'
-  # root 'pages#dashboard'
 
   get '/entity/new' => 'entities#new', as: :new_entity
   get '/spanish' => redirect('/?lang=es')
@@ -17,7 +16,7 @@ Rails.application.routes.draw do
 
 
   resources :medications
-  get '/' => 'medications#index'
+  # get '/' => 'medications#index'
   get '/medications/new' => 'medications#new'
   get '/medications/show' => 'medications#show'
   get '/medications' => 'medications#index'
@@ -27,8 +26,8 @@ Rails.application.routes.draw do
   post '/patient_medications' => 'patient_medications#create'
 
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
-  resources :patients, :medications
-  root to: 'pages#dashboard'
+    resources :patients, :medications
+    root to: 'pages#dashboard'
   end
 
 get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }

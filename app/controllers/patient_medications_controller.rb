@@ -15,10 +15,12 @@ class PatientMedicationsController < InheritedResources::Base
     end
 
     def destroy
+        @patient_medication.destroy
     end
 
     private
     def patient_medication_params
-        params.require(:patient_medication).permit(:dose_time, :medication_id, :patient_id)
+        params.require(:patient_medication).permit(:dose_time, :medication_id, :patient_id,
+            :end_date, :start_date, :frequency, :taken, :dose, :count)
     end
 end

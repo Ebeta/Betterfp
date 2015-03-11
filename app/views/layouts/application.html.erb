@@ -14,18 +14,18 @@
       <ul>
           <!-- Navigation Bar goes here, also to the right-->
           <% if user_signed_in? %>
-          <li>
-          <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+          <li id="loggedin">
+          <%= link_to(t(:logout), destroy_user_session_path, :method => :delete) %>
           </li>
         <% else %>
-          <li>
-         <%= link_to t(:login), new_user_session_path, id: "login"  %>
+          <li id="already_member">
+         Already a member? Login:</li> <li><%=render 'devise/sessions/new'%>
           </li>
         <% end %>
-        <li>  <%= link_to_unless_current "English ", locale: "en" %> |
-    <%= link_to_unless_current " Español", locale: "es" %> </li>
-        <li> <% if user_signed_in? %> <%= link_to t(:my_account), '#' %><% end %></li>
-        <li> <% if user_signed_in? %><%= link_to t(:help), '#' %> <% end%> </li>
+        <li id="loggedin">  <%= link_to_unless_current "English ", locale: "en" %></li>
+        <li id="loggedin">   <%= link_to_unless_current " Español", locale: "es" %> </li>
+        <li id="loggedin"> <% if user_signed_in? %> <%= link_to t(:my_account), '#' %><% end %></li>
+        <li id="loggedin"> <% if user_signed_in? %><%= link_to t(:help), '#' %> <% end%> </li>
 
       </ul>
     <!-- Nav Ends-->
@@ -34,7 +34,7 @@
 </header>
   <body>
 
-    <div class= "main">
+    <div class= "application-yield">
 
         <%= yield %>
     </div>
@@ -43,7 +43,15 @@
 
 </body>
 <!-- Body Ends-->
+<footer>
 
+  <ul>
+    <li> About Us </li>
+    <li> Contact </li>
+    <li> Terms &amp; Conditions </li>
+  </ul>
+
+  </footer>
 
 </html>
 
