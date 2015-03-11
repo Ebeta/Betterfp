@@ -24,5 +24,17 @@ en:
   my_account: "My Account"
   help: "Help"
   login: "Already A Member? Login!"
+  fullname: "Name"
+  age: "Age"
+  gender: "Gender"
+  email: "Email"
+  phonenumber: "Phone Number"
+  emergencycontactname: "Emergency Contact Name"
+  emergencycontactnumber: "Emergency Contact Number"
+  createpatient: "Create Patient"
+  back: "Back"
+  managepatients: "MANAGE PATIENTS"
+  addapatient: "ADD A PATIENT"
+  addmedication: "ADD A MEDICATION TO A PATIENT"
 
 

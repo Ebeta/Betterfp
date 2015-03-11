@@ -18,25 +18,25 @@
   <div class = "patient_fields">
     <h3> Add New Patient Profile </h3>
 
-    <%= f.label :name, t(:Fullname) %><br>
+    <%= f.label :name, t(:fullname) %><br>
     <%= f.text_field :name, value: @patient.name, id: "field" %><br>
 
-    <%= f.label :age, "Age" %><br>
+    <%= f.label :age, t(:age) %><br>
     <%= f.text_field :age, value: @patient.age %><br>
 
-    <%= f.label :gender, "Gender" %><br>
+    <%= f.label :gender, t(:gender) %><br>
     <%= f.text_field :gender, value: @patient.gender %><br>
 
-    <%= f.label :email, "Email" %><br>
+    <%= f.label :email, t(:email) %><br>
     <%= f.text_field :email, value: @patient.email %><br>
 
-    <%= f.label :phone_number, "Phone Number" %><br>
+    <%= f.label :phone_number, t(:phonenumber) %><br>
     <%= f.text_field :phone_number, value: @patient.phone_number %><br>
 
-    <%= f.label :contact, "Emergency Contact" %><br>
+    <%= f.label :contact, t(:emergencycontactname) %><br>
     <%= f.text_field :contact, value: @patient.contact %><br>
 
-    <%= f.label :contact_number, "Contact Phone Number"%><br>
+    <%= f.label :contact_number, t(:emergencycontactnumber) %><br>
     <%= f.text_field :contact_number, value: @patient.contact_number %><br>
 
 
@@ -64,7 +64,7 @@
   </script>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t(:createpatient) %>
   </div>
   </div>
 <% end %>

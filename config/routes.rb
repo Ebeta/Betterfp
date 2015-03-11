@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   post '/patient_medications' => 'patient_medications#create'
 
   scope ":locale", locale: /#{I18n.available_locales.join("|")}/ do
-  resources :patients, :medications
-  root to: 'pages#dashboard'
+    resources :patients, :medications
+    #root to: 'pages#dashboard'
   end
 
 get '*path', to: redirect("/#{I18n.default_locale}/%{path}"), constraints: lambda { |req| !req.path.starts_with? "/#{I18n.default_locale}/" }
