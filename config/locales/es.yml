@@ -36,3 +36,8 @@ es:
   managepatients: "GESTIONAR LOS PACIENTES"
   addapatient: "AÑADIR UN PACIENTE"
   addmedication: "AÑADIR MEDICACIÓN AL PACIENTE"
+  toedit: "Para editar, escriba los cambios y confirme presionando 'Crear Paciente'. Todos los cambios se guardan automáticamente."
+  newpatientprofile: "Nuevo Perfil de Paciente"
+  requiredfields: "Textos obligatorios."
+  profile: "Perfil"
+  logout: "Cerrar Sesión"

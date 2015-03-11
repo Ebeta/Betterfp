@@ -41,7 +41,7 @@
         <div id="tab_0_contents" class="tab_contents tab_contents_active">
         <% @patient_medications.each do |dose| %>
             <li >
-             <br><div class="all-patients-names">  <%= dose.dose_time.strftime("%I:%M %p") %>  <%= dose.patient.name %></div><br>
+             <br><div class="all-patients-names">  <%= dose.dose_time.strftime("%I:%M %p") %>  <%= dose.patient.name %>  -  <%= dose.medication.name %> </div><br>
 
             </li>
         <% end %>

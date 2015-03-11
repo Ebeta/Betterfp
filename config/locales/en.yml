@@ -36,6 +36,11 @@ en:
   managepatients: "MANAGE PATIENTS"
   addapatient: "ADD A PATIENT"
   addmedication: "ADD A MEDICATION TO A PATIENT"
+  toedit: "To edit, type your changes and submit. All changes are automatically saved."
+  newpatientprofile: "New Patient Profile"
+  requiredfields: "Required fields."
+  profile: "Profile"
+  logout: "Logout"
 
 
 

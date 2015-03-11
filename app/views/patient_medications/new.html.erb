@@ -15,30 +15,29 @@
 <p5> After choosing a medication, you can submit and immediately choose another medication for patient.
 
 <%= form_for @patient_medication do |f| %>
-	<%= f.label "Choose Patient:" %><br>
+	<br><%= f.label "Choose Patient:" %><br>
     <%= f.collection_select :patient_id, current_user.patients, :id, :name, id: "patient-form-fields" %><br>
 
-    <%= f.label "Choose A Medication:" %><br>
+    <br><%= f.label "Choose A Medication:" %><br>
     <%= f.collection_select :medication_id, Medication.all, :id, :name, id: "patient-form-fields" %><br>
 
-    <%= f.label "Time:" %><br>
+    <br><%= f.label "Time:" %><br>
     <%= f.time_field :dose_time, id: "patient-form-fields" %><br>
 
-    <%= f.label "Medication Count:" %><br>
+   <br> <%= f.label "Medication Count:" %><br>
     <%= f.text_field :count, value: @patient_medication.count, id: "patient-form-fields" %><br>
 
-    <%= f.label "Dose (include units):" %><br>
+   <br> <%= f.label "Dose (include units):" %><br>
     <%= f.text_field :dose, value: @patient_medication.dose, id: "patient-form-fields" %><br>
 
-    <%= f.label "Frequency:" %><br>
+   <br> <%= f.label "Frequency:" %><br>
     <%= f.text_field :frequency, value: @patient_medication.frequency, id: "patient-form-fields" %><br>
 
-    <%= f.label "Start Date:" %><br>
+   <br> <%= f.label "Start Date:" %><br>
     <%= f.datetime_select :start_date, value: @patient_medication.start_date, id: "patient-form-fields" %><br>
 
-    <%= f.label "End Date:" %><br>
+    <br><%= f.label "End Date:" %><br>
     <%= f.datetime_select :end_date, value: @patient_medication.end_date, id: "patient-form-fields" %><br>
-
 
 	<br><%= f.submit "Save", class: 'signup-button'%><br>
 <% end %>
