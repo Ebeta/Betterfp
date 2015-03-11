@@ -20,6 +20,7 @@ class PatientMedicationsController < InheritedResources::Base
 
     private
     def patient_medication_params
-        params.require(:patient_medication).permit(:dose_time, :medication_id, :patient_id)
+        params.require(:patient_medication).permit(:dose_time, :medication_id, :patient_id,
+            :end_date, :start_date, :frequency, :taken, :dose, :count)
     end
 end

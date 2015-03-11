@@ -182,14 +182,14 @@ body {
     background-color: white;
 
 }
-table {
+.info-wrapper table {
     display: table;
     text-align: -webkit-center;
     border-collapse: separate;
     border-spacing: 30px;
 }
 
-tbody {
+.info-wrapper tbody {
     display: table-row-group;
     vertical-align: middle;
     display: block;
@@ -197,14 +197,14 @@ tbody {
 
 }
 
-td {
+.info-wrapper td {
     vertical-align: middle;
     padding:30px;
     padding-top: 30px;
 
 }
 
-tr {
+.info-wrapper tr {
     display: table-row;
     text-align: -webkit-center;
     vertical-align: middle;
@@ -214,7 +214,7 @@ tr {
 }
 
 
-td.boxone, .boxtwo, .boxthree {
+.info-wrapper td.boxone, .boxtwo, .boxthree {
     width:250px;
     font-size: 14px;
     font-weight: bold;
@@ -301,6 +301,37 @@ td.boxone, .boxtwo, .boxthree {
     overflow: auto;
     min-height:600px;
     list-style: none;
+}
+
+.patient-list table {
+    display: table;
+    text-align: -webkit-center;
+    border-spacing: px;
+    width:400;
+    border-collapse: separate;
+    border-spacing: 30px;
+}
+
+.patient-list tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    display: block;
+    text-align: -webkit-center;
+
+}
+
+.patient-list td {
+    vertical-align: middle;
+
+
+}
+
+.patient-list tr {
+    display: table-row;
+    text-align: -webkit-center;
+    vertical-align: middle;
+
+
 }
 
 .patients-new-wrapper, .medication-form{

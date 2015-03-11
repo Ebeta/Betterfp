@@ -40,9 +40,9 @@
         <!-- Tab 1 Contents -->
         <div id="tab_0_contents" class="tab_contents tab_contents_active">
         <% @patient_medications.each do |dose| %>
-            <li>
-              <%= dose.dose_time.strftime("%I:%M %p") %>
-              <%= dose.patient.name %>
+            <li >
+             <br><div class="all-patients-names">  <%= dose.dose_time.strftime("%I:%M %p") %>  <%= dose.patient.name %></div><br>
+
             </li>
         <% end %>
         </div>
@@ -52,7 +52,7 @@
           <div id="tab_<%= @patients.index(patient)+1 %>_contents" class="tab_contents">
             <%= link_to patient.name, patient_path(patient) %><br>
             <ul>
-              <% patient.patient_medications.each do |patient_medication| %>
+             <br> <% patient.patient_medications.each do |patient_medication| %>
               <li>
                 <%= patient_medication.dose_time.strftime("%I:%M %p") %>
                 <%= patient_medication.medication.name %>

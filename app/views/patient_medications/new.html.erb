@@ -35,10 +35,10 @@
     <%= f.text_field :frequency, value: @patient_medication.frequency, id: "patient-form-fields" %><br>
 
     <%= f.label "Start Date:" %><br>
-    <%= f.text_field :start_date, value: @patient_medication.start_date, id: "patient-form-fields" %><br>
+    <%= f.datetime_select :start_date, value: @patient_medication.start_date, id: "patient-form-fields" %><br>
 
     <%= f.label "End Date:" %><br>
-    <%= f.text_field :end_date, value: @patient_medication.end_date, id: "patient-form-fields" %><br>
+    <%= f.datetime_select :end_date, value: @patient_medication.end_date, id: "patient-form-fields" %><br>
 
 
 	<br><%= f.submit "Save", class: 'signup-button'%><br>
