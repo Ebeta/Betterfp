@@ -20,14 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 es:
-  fullname: Nombre
+  fullname: Nombre*
   hello: "Hola"
   help: Ayuda
   login: "Ya eres miembro? Iniciar!"
   my_account: "Mi cuenta"
-  age: Edad
+  age: Edad*
   gender: Género
-  email: "Correo Electrónico"
+  email: "Correo Electrónico*"
   phonenumber: "Número De Teléfono"
   emergencycontactname: "Nombre De Contacto De Emergencia"
   emergencycontactnumber: "Número De Contact De Emergencia"

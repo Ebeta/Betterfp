@@ -1,15 +1,14 @@
     <div class = "sidebar">
       <ul>
 
-          <li><%=image_tag "plusicon.png", id: "sidebar-image"%> <%= link_to 'MANAGE PATIENTS', '/patients' %></li>
-          <li><%= image_tag "adduser.png", id: "sidebar-image" %> <%= link_to 'ADD A PATIENT', new_patient_path %></li>
-          <li><%= image_tag "medicine.png", id: "sidebar-image" %> <%= link_to 'ADD A MEDICATION TO A PATIENT', new_patient_medication_path %></li>
+          <li><%=image_tag "plusicon.png", id: "sidebar-image"%> <%= link_to t(:managepatients), '/patients' %></li>
+          <li><%= image_tag "adduser.png", id: "sidebar-image" %> <%= link_to t(:addapatient), new_patient_path %></li>
+          <li><%= image_tag "medicine.png", id: "sidebar-image" %> <%= link_to t(:addmedication), new_patient_medication_path %></li>
           <!-- collection of patients in a scroll down bar -->
       </ul>
     </div>
 
     <!-- Sidebar Ends-->
-<div class = "medication-form">
 
 
 <h2>Add A Medication to Patient</h2>
