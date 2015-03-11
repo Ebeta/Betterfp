@@ -26,10 +26,6 @@ class MedicationsController < InheritedResources::Base
     def create
     end
 
-     def delete
-    @profile.destroy
-
-    end
 
     private
 

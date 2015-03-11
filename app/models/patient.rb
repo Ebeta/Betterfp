@@ -2,6 +2,7 @@ class Patient < ActiveRecord::Base
 	has_many :patient_medications
 	has_many :medications, through: :patient_medications
   	belongs_to :entity
+    belongs_to :user
 
     validates :name, presence:true
     validates :age, numericality: {greater_than_or_equal_to: 0}

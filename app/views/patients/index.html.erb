@@ -1,15 +1,37 @@
 <!-- MANAGE PATIENTS. LISTS OUT ALL PATIENTS. -->
 
-<div class = "patient_list">
+    <div class = "sidebar">
+      <ul>
 
-<% if @patients.size == 0 %>
+          <li><%=image_tag "plusicon.png", id: "sidebar-image"%> <%= link_to 'MANAGE PATIENTS', '/patients' %></li>
+          <li><%= image_tag "adduser.png", id: "sidebar-image" %> <%= link_to 'ADD A PATIENT', new_patient_path %></li>
+          <li><%= image_tag "medicine.png", id: "sidebar-image" %> <%= link_to 'ADD A MEDICATION TO A PATIENT', new_patient_medication_path %></li>
+          <!-- collection of patients in a scroll down bar -->
+      </ul>
+    </div>
+
+    <!-- Sidebar Ends-->
+
+
+
+<div class = "patient-list">
+
+<h4><% if @patients.size == 0 %>
 <em> No patients found. <%= link_to "Add a new patient here", new_patient_path %>. </em>
-<% end %>
+<% end %></h4>
 
+<table>
+    <tbody>
+        <tr>
     <% @patients.each do |patient| %>
-        <div class = "patient-list-name"> <p><%= patient.name, @patient %></p> </div>
-        <div class = "patient-list-info"><p2><%= patient.age %>, <%= patient.gender %></p2></div>
+        <td><div class = "patient-list-name"> <%= patient.name %> </div></td>
+        <td><div class = "patient-list-info"><%= patient.age %>, <%= patient.gender %></td></div>
+        <td><%= link_to 'Edit', profile %></td>
+        <td><%= link_to 'Delete', profile, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <% end %>
+</tr>
+</tbody>
+</table>
 </div>
 
 

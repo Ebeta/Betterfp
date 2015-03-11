@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :entity
+  has_many :patients
 
 	def add_entity(current_user)
 		if current_user

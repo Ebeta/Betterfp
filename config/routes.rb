@@ -5,7 +5,8 @@ Rails.application.routes.draw do
 
   post '/entities' => 'entities#create'
 
-  root 'pages#dashboard'
+  get '/' => 'pages#dashboard'
+  # root to: 'pages#dashboard'
 
   get '/entity/new' => 'entities#new', as: :new_entity
   get '/spanish' => redirect('/?lang=es')
@@ -16,7 +17,7 @@ Rails.application.routes.draw do
 
 
   resources :medications
-  get '/' => 'medications#index'
+  # get '/' => 'medications#index'
   get '/medications/new' => 'medications#new'
   get '/medications/show' => 'medications#show'
   get '/medications' => 'medications#index'

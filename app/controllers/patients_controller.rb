@@ -25,7 +25,7 @@ class PatientsController < ApplicationController
         if @patient.save
             redirect_to root_path
         else
-            render :action => 'new'
+            render :action => 'show'
         # PatientMedication.create(patient: patient, medication: med)
 
             respond_to do |format|
@@ -42,6 +42,10 @@ class PatientsController < ApplicationController
 
     def destroy
         @patient.destroy
+        respond_to do |format|
+        format.html { redirect_to profiles_url, notice: 'Patient was successfully deleted.' }
+        format.json { head :no_content }
+    end
     end
 
     def update

@@ -15,6 +15,7 @@ class PatientMedicationsController < InheritedResources::Base
     end
 
     def destroy
+        @patient_medication.destroy
     end
 
     private

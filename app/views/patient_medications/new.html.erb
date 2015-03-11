@@ -1,13 +1,47 @@
-<h3>Add A Medication to Patient</h3>
+    <div class = "sidebar">
+      <ul>
 
+          <li><%=image_tag "plusicon.png", id: "sidebar-image"%> <%= link_to 'MANAGE PATIENTS', '/patients' %></li>
+          <li><%= image_tag "adduser.png", id: "sidebar-image" %> <%= link_to 'ADD A PATIENT', new_patient_path %></li>
+          <li><%= image_tag "medicine.png", id: "sidebar-image" %> <%= link_to 'ADD A MEDICATION TO A PATIENT', new_patient_medication_path %></li>
+          <!-- collection of patients in a scroll down bar -->
+      </ul>
+    </div>
 
+    <!-- Sidebar Ends-->
 <div class = "medication-form">
+
+
+<h2>Add A Medication to Patient</h2>
+<p5> After choosing a medication, you can submit and immediately choose another medication for patient.
+
 <%= form_for @patient_medication do |f| %>
-	<%= f.collection_select :patient_id, current_user.patients, :id, :name %><br>
-	<%= f.collection_select :medication_id, Medication.all, :id, :name %><br>
-	<%= f.time_field :dose_time %><br>
+	<%= f.label "Choose Patient:" %><br>
+    <%= f.collection_select :patient_id, current_user.patients, :id, :name, id: "patient-form-fields" %><br>
+
+    <%= f.label "Choose A Medication:" %><br>
+    <%= f.collection_select :medication_id, Medication.all, :id, :name, id: "patient-form-fields" %><br>
+
+    <%= f.label "Time:" %><br>
+    <%= f.time_field :dose_time, id: "patient-form-fields" %><br>
+
+    <%= f.label "Medication Count:" %><br>
+    <%= f.text_field :count, value: @patient_medication.count, id: "patient-form-fields" %><br>
+
+    <%= f.label "Dose (include units):" %><br>
+    <%= f.text_field :dose, value: @patient_medication.dose, id: "patient-form-fields" %><br>
+
+    <%= f.label "Frequency:" %><br>
+    <%= f.text_field :frequency, value: @patient_medication.frequency, id: "patient-form-fields" %><br>
+
+    <%= f.label "Start Date:" %><br>
+    <%= f.text_field :start_date, value: @patient_medication.start_date, id: "patient-form-fields" %><br>
+
+    <%= f.label "End Date:" %><br>
+    <%= f.text_field :end_date, value: @patient_medication.end_date, id: "patient-form-fields" %><br>
 
 
-	<%= f.submit %><br>
+	<br><%= f.submit "Save", class: 'signup-button'%><br>
 <% end %>
+
 </div>

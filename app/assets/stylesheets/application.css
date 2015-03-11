@@ -34,11 +34,11 @@ body {
     clear:both;
 }
 
-.dashboard-container{
+.signin-container{
     line-height: 1;
     display:block;
     overflow: auto;
-    min-height:100%;
+    height:500px;
     clear:both;
     background-image: url("doctor2.jpg");
     background-size: 100%;
@@ -47,7 +47,7 @@ body {
 
 .nav {
      font-family: 'Source Sans Pro', sans-serif;
-     background-color: #4E1347;
+     background-color:#4E1347;
      margin: 0;
      height: 60px;
      float:left;
@@ -67,19 +67,20 @@ body {
 .nav ul {
      font-size: 13px;
      float:right;
-     margin-right: 30px;
+     margin-right: 40px;
+    display:inline-block;
      text-decoration: none;
 }
 
 .nav li{
     display:inline-block;
-    margin-top: 20px;
-    margin-right: 15px;
+    margin-top: 5px;
+    margin-right: 10px;
     margin-left: 15px;
     border-radius: 2px;
     color: white;
     text-decoration: none;
-    vertical-align:bottom;
+    vertical-align:middle;
 }
 
 .nav ul li a:hover{
@@ -95,6 +96,30 @@ body {
     color:white;
 }
 
+.login-fields {
+    font-size: 12px;
+    display: inline-block;
+}
+
+#login-button {
+    color:black;
+    font-size: 12px;
+
+}
+
+#already_member {
+    margin-top: 15px;
+}
+
+#loggedin {
+    margin-top: 20px;
+}
+
+#password-field {
+    color:black;
+}
+
+
 .signup {
 
   font-family: 'Source Sans Pro', sans-serif;
@@ -102,8 +127,8 @@ body {
     float:right;
     margin-right: 50px;
     margin-top: 50px;
-    padding:20px;
-    height: 100%;
+    padding:10px;
+    height: 430px;
     border-radius: 10px;
     font-size: 15px;
     text-align: center;
@@ -114,29 +139,48 @@ body {
 
 }
 
+.signup-field {
+    line-height: 2;
+}
+
 .welcome {
     font-family: 'Source Sans Pro', sans-serif;
     float:left;
-    width:400px;
-    margin-top:60px;
+    width:600px;
+    margin-top:20px;
     margin-left: 60px;
+
 }
 
-.welcome h1, p1 {
+.welcome h1 {
+    font-size: 4em;
+}
+
+.welcome p {
+    font-size: 1.5em;
+}
+.welcome h1, p {
     color: white;
-   text-shadow: 1px 1px 5px #000000;
+   text-shadow: 1px 1px 6px #000000;
+}
+
+.welcome-wrapper {
+    display:block;
+    height:500px;
+    clear:both;
+
 }
 
 .info-wrapper {
-    margin: 0 auto;
     font-family: 'Source Sans Pro', sans-serif;
     width: 100%;
     height:100%;
     clear:both;
     display: block;
     text-align: -webkit-center;
-     position: relative;
-    top: 80px;
+    /*top: 50px;*/
+    background-color: white;
+
 }
 table {
     display: table;
@@ -177,7 +221,9 @@ td.boxone, .boxtwo, .boxthree {
     border:1px solid;
     border-radius: 10px;
     margin: 30px;
-    background-color: rgba(233, 234, 237, .8)
+    background-color: rgba(233, 234, 237, .8);
+    padding-top:10px;
+    box-shadow: 0px 0px 12px 0px #909090;
 
 }
 
@@ -186,16 +232,19 @@ td.boxone, .boxtwo, .boxthree {
     font-family: 'Source Sans Pro', sans-serif;
     width:300px;
     float:left;
-    padding:10px;
     height: 400px;
-    border: 1px solid;
-    line-height: 2;
-    font-size: 15px;
+    border: 2px solid;
+    border-radius:15px;
+    line-height: 3.5;
+    font-size: 14px;
+    margin:30px;
+    background-color: #f2f2f2;
 }
 
 .sidebar ul {
     list-style-type: none;
     text-decoration: none;
+    padding-top: 20px;
 }
 
 .sidebar a{
@@ -209,7 +258,7 @@ td.boxone, .boxtwo, .boxthree {
     color:purple;
 }
 
-.main-container {
+.dash-container {
     margin-top: 60px;
     font-family: 'Source Sans Pro', sans-serif;
     margin: 10px;
@@ -217,40 +266,62 @@ td.boxone, .boxtwo, .boxthree {
     padding:15px;
     width: 400 px;
     overflow: auto;
-    min-height:100%;
+    min-height:600px;
     list-style: none;
 }
 
-.main {
+.application-yield {
     display: block;
     margin-bottom: 40px;
 }
-.main-container ul{
+.dash-container ul{
     list-style-type: none;
 }
 
-.main-container p1{
+.dash-container p1{
     font-size: 25px;
 
 }
 
-.main-container p2{
+.dash-container p2{
     font-style: italic;
     font-size: 14px;
-   /* display:inline-block;*/
     margin-bottom: 15px;
     position: relative;
 }
 
 
-.patient_list {
+.patient-list, .patient-profile, .patients-new-wrapper, .medication-form  {
+    margin-top: 60px;
     font-family: 'Source Sans Pro', sans-serif;
-    display: block;
+    margin: 10px;
     margin-left: 20px;
-    width: 500px;
-    float: left;
+    padding:15px;
+    width: 400 px;
+    overflow: auto;
+    min-height:600px;
+    list-style: none;
 }
 
+.patients-new-wrapper, .medication-form{
+line-height: 1.5;
+}
+#patient-form-fields {
+    font-family:arial;
+    padding-top: 10px;
+    width:400px;
+    border:1px dashed;
+    font-weight:bold;
+
+}
+
+.medication-form {
+
+}
+
+.actions {
+    padding-top: 10px;
+}
 /*Add Medication Collapsable Form*/
 
 .addmedcontainer {
@@ -279,35 +350,28 @@ td.boxone, .boxtwo, .boxthree {
     font-weight: bold;
 }
 
-.footer {
+footer {
     font-family: 'Source Sans Pro', sans-serif;
-    width:100%;
-    height:50px;
-    margin-top: 50px;
-    display: block;
-    bottom:0;
-    left:0;
-    clear: both;
     text-align: center;
+
 }
 
-.footer li{
+footer li{
+
     margin-top: 10px;
     font-size: 13px;
     font-weight: bold;
     display: inline;
     color:#4E1347;
     margin-right: 40px;
-    margin-bottom: 20px;
-
-
 }
 
 /*######### Image Stylizing #########*/
 
 #sidebar-image {
 
-    vertical-align:bottom;
+    vertical-align:middle;
+    padding-right: 10px;
 }
 
 #logo {
@@ -315,6 +379,20 @@ td.boxone, .boxtwo, .boxthree {
     margin-bottom: 5px;
     cursor: pointer;
     margin-top: 7px;
+}
+
+#calendar-icon {
+    width: 40%;
+    height:auto;
+}
+
+#search-icon {
+    width: 30%;
+    height:auto;
+}
+
+#calendar-icon, #search-icon, #medplusicon {
+    padding-bottom: 15px;
 }
 
 /*######### Button Stylizing #########*/
@@ -339,7 +417,6 @@ td.boxone, .boxtwo, .boxthree {
   letter-spacing: 1px;
 }
 
-
 /*###### Tabbed Container in Dashboard ######*/
 
 a:active {
@@ -356,7 +433,7 @@ a:focus {
 }
 #tabs_container ul.tabs {
     list-style: none;
-    border-bottom: 1px solid #ccc;
+    /*border-bottom: 1px solid #ccc;*/
     height: 21px;
     margin: 0;
 }
@@ -391,7 +468,6 @@ div.tab_contents_active {
 div.clear {
     clear: both;
 }
-
 
 .scrollbox {
     height: 200px;
